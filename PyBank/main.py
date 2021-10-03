@@ -17,6 +17,11 @@ def formatmoney(v):
 
 fw = open(r'analysis\budget_result.txt', 'w')
 
+print('Financial Analysis', file=fw)
+print('Financial Analysis')
+print('-' * 100, file=fw)
+print('-' * 100)
+
 c = 0
 totpnl = 0
 pnl_d = {}
@@ -26,7 +31,7 @@ with open(r'Resources\budget_data.csv', 'r') as fr:
     # print(fr.readline())
 
     for line in fr:
-        if len(line) == 0:
+        if not line.strip():
             continue
         
         line = line.strip()
